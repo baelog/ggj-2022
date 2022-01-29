@@ -8,7 +8,7 @@ public class MonsterAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask EnemyLayers;
-
+    public int attackDamage = 1;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -26,7 +26,7 @@ public class MonsterAttack : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, EnemyLayers);
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log("We Hit " + enemy.name);
+            enemy.GetComponent<MonsterStats>().hp -= attackDamage;
         }
         // damage au enenmy
     }
