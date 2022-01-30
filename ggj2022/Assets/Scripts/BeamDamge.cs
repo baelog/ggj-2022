@@ -11,8 +11,8 @@ public class BeamDamge : MonoBehaviour
         Debug.Log(col.gameObject.name + " : " + gameObject.name + " : " + Time.time);
         print("ratté");
         if(col.gameObject.tag == "Player") {
-            TakeDamage dealDamage = col.gameObject.GetComponent<TakeDamage>();
-            dealDamage.ReduceHealth(stats.damage);
+            TakeDamagePlayer dealDamage = col.gameObject.GetComponent<TakeDamagePlayer>();
+            dealDamage.ReduceHealthPlayer(stats.damage);
         }
     }
 }

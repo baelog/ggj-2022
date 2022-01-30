@@ -72083,7 +72083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 4
   JumpForce: 5
-  health: 10
+  health: 3
   death: 0
   animator: {fileID: 1818944347}
   tim: {fileID: 0}
@@ -72143,11 +72143,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1818944346}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e11683d7e48e1d14a93dd02ad470aebc, type: 3}
+  m_Script: {fileID: 11500000, guid: 60736404a298e0c4cae94dfd76202af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
-  objToDestroy: {fileID: 0}
+  stats: {fileID: 1818944350}
+  animator: {fileID: 1818944347}
 --- !u!1 &1821778829
 GameObject:
   m_ObjectHideFlags: 0
