@@ -54,4 +54,17 @@ public class Character2DControler : MonoBehaviour
 
 
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("TP"))
+        {
+            transform.position = new Vector3(GameObject.Find("TpSky").transform.position.x, GameObject.Find("TpSky").transform.position.y, 0);
+            print("TP");
+        }
+        else if (other.gameObject.CompareTag("Trap"))
+        {
+            Debug.Log("You loose");
+        }
+    }
 }
