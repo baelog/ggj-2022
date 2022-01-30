@@ -12,7 +12,7 @@ public class Character2DControler : MonoBehaviour
     public float JumpForce = 4;
     public int health = 10;
     private int jump = 0;
-    private bool death = false;
+    public bool death = false;
     private int transformation = 1;
     private Rigidbody2D _rigidbody;
     public Animator animator;
@@ -82,7 +82,6 @@ public class Character2DControler : MonoBehaviour
             health = 10;
             death = true;
             animator.SetBool("Death", true);
-            
         }
     }
 }
