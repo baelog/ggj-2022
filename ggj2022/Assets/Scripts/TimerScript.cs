@@ -6,8 +6,8 @@ using System;
 
 public class TimerScript : MonoBehaviour
 {
-    bool timerActive = false;
-    float currentTime;
+    public bool timerActive = false;
+    public static float currentTime;
     public Text currentTimeText;
     public Text highScore;
     // Start is called before the first frame update

@@ -14,7 +14,7 @@ public class Character2DControler : MonoBehaviour
     private Rigidbody2D _rigidbody;
     public Animator animator;
 
-    public TimerScript tim;
+    public TimerScript tim = new TimerScript();
 
     private void Start()
     {
