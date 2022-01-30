@@ -76,6 +76,11 @@ public class Character2DControler : MonoBehaviour
             transform.position = new Vector3(GameObject.Find("TpSky").transform.position.x, GameObject.Find("TpSky").transform.position.y, 0);
             
         }
+        else if (other.gameObject.CompareTag("TPend"))
+        {
+            //ICI
+            SceneManager.LoadScene("Menu");
+        }
         else if (other.gameObject.CompareTag("Trap"))
         {
             health = 10;
