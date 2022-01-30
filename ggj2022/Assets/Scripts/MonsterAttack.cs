@@ -8,12 +8,19 @@ public class MonsterAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask EnemyLayers;
-    public int attackDamage = 1;
+    public MonsterStats stats;
+    private float waitTime = 2.0f;
+    private float timer = 0.0f;
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        timer += Time.deltaTime;
+        if (timer > waitTime)
         {
             Attack();
+
+            // Remove the recorded 2 seconds.
+            timer = 0;
         }
 
     }
@@ -26,7 +33,10 @@ public class MonsterAttack : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, EnemyLayers);
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<MonsterStats>().hp -= attackDamage;
+            if (enemy.gameObject.tag == "Player") {
+                TakeDamage dealDamage = enemy.gameObject.GetComponent<TakeDamage>();
+                dealDamage.ReduceHealth(stats.damage);
+            }
         }
         // damage au enenmy
     }
