@@ -18,8 +18,6 @@ public class MonsterAttack : MonoBehaviour
         if (timer > waitTime)
         {
             Attack();
-
-            // Remove the recorded 2 seconds.
             timer = 0;
         }
 
@@ -34,8 +32,8 @@ public class MonsterAttack : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies)
         {
             if (enemy.gameObject.tag == "Player") {
-                TakeDamage dealDamage = enemy.gameObject.GetComponent<TakeDamage>();
-                dealDamage.ReduceHealth(stats.damage);
+                TakeDamagePlayer dealDamage = enemy.gameObject.GetComponent<TakeDamagePlayer>();
+                dealDamage.ReduceHealthPlayer(stats.damage);
             }
         }
         // damage au enenmy
