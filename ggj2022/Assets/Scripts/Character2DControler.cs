@@ -3,9 +3,6 @@ using System;
 using UnityEngine.SceneManagement;
 
 
-
-
-
 public class Character2DControler : MonoBehaviour
 {
     public float MovementSpeed = 4;
@@ -72,10 +69,12 @@ public class Character2DControler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        print("Collider");
         if (other.gameObject.CompareTag("TP"))
         {
-            transform.position = new Vector3(GameObject.Find("TpSky").transform.position.x, GameObject.Find("TpSky").transform.position.y, 0);
             print("TP");
+            transform.position = new Vector3(GameObject.Find("TpSky").transform.position.x, GameObject.Find("TpSky").transform.position.y, 0);
+            
         }
         else if (other.gameObject.CompareTag("Trap"))
         {
