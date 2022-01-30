@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 4411893765082434822}
   - component: {fileID: 4411893765082434825}
   - component: {fileID: 7446986675330389959}
+  - component: {fileID: 3108015362299427906}
+  - component: {fileID: 8839888955544752429}
+  - component: {fileID: 1420885653796607376}
   m_Layer: 0
   m_Name: texture_laser
   m_TagString: Untagged
@@ -122,3 +125,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.04, y: 11.22}
   m_EdgeRadius: 0
+--- !u!114 &3108015362299427906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411893765082434820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11683d7e48e1d14a93dd02ad470aebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 8839888955544752429}
+  objToDestroy: {fileID: 4411893765082434820}
+--- !u!114 &8839888955544752429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411893765082434820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f0c4d42e72634440a2049849099eeec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 5000
+  damage: 1
+  speed: 0
+--- !u!114 &1420885653796607376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411893765082434820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9ea1a1742bc3945aec5bdc0004f779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 8839888955544752429}

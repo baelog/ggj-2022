@@ -16,7 +16,7 @@ public class BossAttack : MonoBehaviour
         if (timer > waitTime)
         {
             timer = 0;
-            Instantiate(beam, new Vector3(Random.Range(leftTop.position.x, rightBot.position.x), Random.Range(leftTop.position.y, rightBot.position.y), leftTop.position.z), transform.rotation * Quaternion.Euler(0f,180f, 0f));
+            Instantiate(beam, new Vector3(Random.Range(leftTop.position.x, rightBot.position.x), transform.position.y, leftTop.position.z), transform.rotation * Quaternion.Euler(0f,180f, 0f));
         }
     }
 }
