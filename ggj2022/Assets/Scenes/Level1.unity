@@ -20876,7 +20876,7 @@ GameObject:
   - component: {fileID: 1330174080}
   - component: {fileID: 1330174079}
   m_Layer: 0
-  m_Name: TpLevelEnd (1)
+  m_Name: TpLevelEnd (cheat)
   m_TagString: TP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26256,6 +26256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f9ef1ac7e7ba442b0e0124de12939e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerActive: 0
   currentTimeText: {fileID: 2096148197}
   highScore: {fileID: 0}
 --- !u!114 &1678191713
@@ -72085,6 +72086,7 @@ MonoBehaviour:
   health: 10
   death: 0
   animator: {fileID: 1818944347}
+  tim: {fileID: 0}
 --- !u!61 &1818944351
 BoxCollider2D:
   m_ObjectHideFlags: 0
