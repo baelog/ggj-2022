@@ -14,6 +14,8 @@ public class Character2DControler : MonoBehaviour
     private Rigidbody2D _rigidbody;
     public Animator animator;
 
+    public TimerScript tim;
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -78,7 +80,7 @@ public class Character2DControler : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("TPend"))
         {
-            //ICI
+            tim.StopTimer();
             SceneManager.LoadScene("Menu");
         }
         else if (other.gameObject.CompareTag("Trap"))

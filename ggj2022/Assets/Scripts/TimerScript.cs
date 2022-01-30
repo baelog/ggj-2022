@@ -45,8 +45,6 @@ public class TimerScript : MonoBehaviour
     public void StopTimer() {
         timerActive = false;
         StockTime();
-        TimeSpan high = TimeSpan.FromSeconds(PlayerPrefs.GetFloat("HighScore", 0));
-        highScore.text = high.ToString(@"mm\:ss\:ff");
     }
 
     //AbortTimer just stop the timer and reset it if the player leave the level without finishing it
