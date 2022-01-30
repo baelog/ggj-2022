@@ -1,12 +1,18 @@
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
+
+
+
 
 
 public class Character2DControler : MonoBehaviour
 {
     public float MovementSpeed = 4;
     public float JumpForce = 4;
+    public int health = 10;
     private int jump = 0;
+    private bool death = false;
     private int transformation = 1;
     private Rigidbody2D _rigidbody;
     public Animator animator;
@@ -20,11 +26,15 @@ public class Character2DControler : MonoBehaviour
     private void Update()
     {
         var movement = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
+
+        if (death == false)
+        {
+            transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
+        }
 
         animator.SetFloat("Speed", Mathf.Abs(movement));
 
-        if (Input.GetKeyUp("e"))
+        if (Input.GetKeyUp("e") && death == false)
         {
             if (transformation == 1)
             {
@@ -38,7 +48,7 @@ public class Character2DControler : MonoBehaviour
             }
         }
 
-        if (!Mathf.Approximately(0, movement))
+        if (!Mathf.Approximately(0, movement) && death == false)
             transform.rotation = movement > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
 
         //if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
@@ -46,13 +56,18 @@ public class Character2DControler : MonoBehaviour
         if (Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
             jump = 0;
 
-        if (Input.GetButtonDown("Jump") && jump < transformation)
+        if (Input.GetButtonDown("Jump") && jump < transformation && death == false)
         {
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             jump += 1;
         }
 
 
+    }
+
+    public void Die()
+    {
+        SceneManager.LoadScene("Level1");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -64,7 +79,10 @@ public class Character2DControler : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Trap"))
         {
-            Debug.Log("You loose");
+            health = 10;
+            death = true;
+            animator.SetBool("Death", true);
+            
         }
     }
 }
